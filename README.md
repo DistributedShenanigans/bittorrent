@@ -16,7 +16,7 @@ Implement a simplified BitTorrent-style file sharing protocol. Each peer stores 
 ### 1. Start the Tracker
 
 ```bash
-python3.12 -m tracker.server
+python -m tracker.server
 ```
 This starts the tracker on port 8080.
 
@@ -30,7 +30,7 @@ curl http://localhost:8080/health
 ###  2. Start the Seeder(s)
 
 ```bash
-python3.12 -m seed.seed \
+python -m seed.seed \
   -t path/to/your-file.torrent \
   -p 6881
 ```
@@ -44,7 +44,7 @@ This will:
 
 To download the file using the BitTorrent client:
 ```bash
-python3.12 -m client.main \
+python -m client.main \
   -t path/to/your-file.torrent \
   -o path/to/output-file \
   -p 6889
